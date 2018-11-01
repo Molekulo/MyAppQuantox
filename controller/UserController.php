@@ -98,7 +98,7 @@ class UserController
 					echo "You must enter all fields!";				
 				} else if ($pass != $pass2) {
 					echo "Passwords don't match!Try again";
-				} else if ($tempEmail == 1 || $tempUser == 1) {
+				} else if ($tempEmail->num_rows == 1 || $tempUser->num_rows == 1) {
 					echo "Email or username already exists in database. Try other email or username!";
 				} else {
 					$registerUser = UserModel::execute('registerUser', $user, $email, $pass);
