@@ -46,7 +46,7 @@ class UserController
 	public static function login()
 	{
 		if (static::checkUser()) {
-			static::home();
+			include "view/home.php";
 		} else {
 			include "view/login.php";
 			if ($_POST) {
